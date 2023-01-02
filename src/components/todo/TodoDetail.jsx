@@ -12,7 +12,6 @@ const TodoDetail = () => {
     const res = await axios.get(`http://localhost:8080/todos/${param}`, {
       headers: { Authorization: token },
     });
-    console.log(res.data.data);
     setTodoItem(res.data.data);
   };
 
