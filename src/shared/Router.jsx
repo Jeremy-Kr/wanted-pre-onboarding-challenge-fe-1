@@ -4,6 +4,7 @@ import Login from "../components/auth/Login";
 import SignUp from "../components/auth/SignUp";
 import Layout from "../components/common/Layout";
 import Todo from "../components/todo/Todo";
+import TodoDetail from "../components/todo/TodoDetail";
 
 const Router = () => {
   return (
@@ -11,6 +12,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Todo />} />
+          <Route path="/:id" element={<TodoDetail />} />
           <Route path="auth/login" element={<Login />} />
           <Route path="auth/sign_up" element={<SignUp />} />
         </Route>

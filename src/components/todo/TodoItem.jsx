@@ -58,7 +58,7 @@ const TodoItem = ({ todoItem, setTodoList }) => {
           }}
         />
       ) : (
-        <Link>
+        <Link to={`/${todoItem.id}`}>
           <h3>{todoItem.title}</h3>
         </Link>
       )}
