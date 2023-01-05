@@ -36,6 +36,12 @@ const TodoItem = ({ todoItem, setTodoList }) => {
   };
 
   const handleOnDeleteClick = async () => {
+    if (isEditing) {
+      setNewTitle(todoItem.title);
+      setNewContent(todoItem.content);
+      setIsEditing(!isEditing);
+      return;
+    }
     const deleteConfirm = window.confirm("정말 삭제하시겠습니까?");
     if (deleteConfirm) {
       try {
@@ -87,7 +93,7 @@ const TodoItem = ({ todoItem, setTodoList }) => {
             handleOnDeleteClick();
           }}
         >
-          삭제
+          {isEditing ? "취소" : "삭제"}
         </CustomButton>
       </ButtonContainer>
     </CustomLi>

@@ -5,10 +5,12 @@ const Header = () => {
   const navigate = useNavigate();
   const user = localStorage.getItem("token");
   const handleOnLogoutClick = () => {
-    const logoutConfirm = window.confirm("정말 로그아웃 하시겠습니까?");
-    if (logoutConfirm) {
-      localStorage.removeItem("token");
-      navigate("/auth/login");
+    if (user) {
+      const logoutConfirm = window.confirm("정말 로그아웃 하시겠습니까?");
+      if (logoutConfirm) {
+        localStorage.removeItem("token");
+        navigate("/auth/login");
+      }
     }
   };
   return (

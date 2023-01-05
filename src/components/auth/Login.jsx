@@ -8,6 +8,13 @@ const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [isInvalid, setIsInvalid] = useState(true);
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, []);
 
   const handleOnEmailChange = (e) => {
     setLoginEmail(e.target.value);
